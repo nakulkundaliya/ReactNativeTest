@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, Image, View } from 'react-native'
+import { connect } from 'react-redux'
+
 import { Images } from '../Themes'
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
-export default class LaunchScreen extends Component {
-  render () {
+class LaunchScreen extends React.Component {
+  render() {
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
@@ -27,3 +29,15 @@ export default class LaunchScreen extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    // ...redux state to props here
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LaunchScreen)
